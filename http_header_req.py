@@ -1,12 +1,12 @@
-import urllib2
+import urllib
 
 url = "http://www.nostarch.com"
 
 headers = {}
 headers['User-Agent'] = 'Googlebot'
 
-request = urllib2.Request(url,headers=headers)
-response = urllib2.urlopen(request)
+request = urllib.Request(url,headers=headers)
+response = urllib.urlopen(request)
 
 print(response.read())
 response.close()
