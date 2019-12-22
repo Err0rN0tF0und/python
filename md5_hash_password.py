@@ -1,18 +1,15 @@
-import hashlib
+import md5
 
-pash_hash = input('md5_hash:')
-wordlist = open(/usr/share/wordlists/rockyou.txt,"r")
+counter = 1
+md5_hash = raw_input("enter the md5 hash:")
+wordlist = open('/usr/share/wordlists/rockyou.txt', 'r')
 
-for words in wordlist   
-    enc_word = word.encode('utf-8')
-    
-digest = hashlib.md5(enc_word.strip()).hexdigest()
+for password in wordlist:
+    filemd5 = md5.new(password.strip()).hexdigit()
+    print("trying password %d: %s" %(counter,password.strip())
+    counter+=1
 
-if digest = pash_hash
-    print('password found')
-    print('password'+word)
-    flag = 1
-    break
-
-if flag = 0
-    print('password not in list')
+    if md5_hash == filemd5:
+        print("password found: %s" %password)
+	break
+else: print(password not found.)
